@@ -1,3 +1,9 @@
+import { Layout } from "@/components/Layout";
+
 export default function Posts() {
-  return <div>Posts</div>
+  return (
+    <Layout>
+      <div>Posts</div>
+    </Layout>
+  );
 }
