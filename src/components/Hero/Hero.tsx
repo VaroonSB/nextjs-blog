@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classes from "./styles/hero.module.css";
+import classes from "./hero.module.css";
 
 export const Hero = () => {
   return (
