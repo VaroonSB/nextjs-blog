@@ -1,13 +1,21 @@
-import { PostItem } from "../PostItem";
+import { PostGrid } from "../PostGrid/PostGrid";
 import { Post } from "../types";
-import classes from "./PostList.module.css";
+import featuredPostClasses from "./FeaturedPosts.module.css";
+import allPostClasses from "./AllPosts.module.css";
 
-export const PostList = ({ posts }: { posts: Post[] }) => {
+export const PostList = ({
+  posts,
+  page,
+}: {
+  posts: Post[];
+  page: "plp" | "featured_posts";
+}) => {
+  const classes = page === "plp" ? allPostClasses : featuredPostClasses;
   return (
-    <ul className={classes.grid}>
-      {posts.map((post) => (
-        <PostItem key={post.id} post={post} />
-      ))}
-    </ul>
+    <section className={classes.posts}>
+      {page === "plp" && <h1>All Posts</h1>}
+      {page === "featured_posts" && <h2>Featured Posts</h2>}
+      <PostGrid posts={posts} />
+    </section>
   );
 };

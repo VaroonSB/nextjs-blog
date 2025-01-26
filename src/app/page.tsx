@@ -1,6 +1,5 @@
 import { Hero } from "@/components/Hero";
-import { Layout } from "@/components/Layout";
-import { FeaturedPost } from "@/components/Posts/FeaturedPosts";
+import { PostList } from "@/components/Posts/PostList";
 
 const DUMMY_POSTS = [
   {
@@ -10,6 +9,8 @@ const DUMMY_POSTS = [
     excerpt:
       "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
     date: "2022-02-10",
+    content:
+      "# This is a first post\n\nAnd this is the content of the first post",
   },
   {
     id: "p2",
@@ -18,6 +19,8 @@ const DUMMY_POSTS = [
     excerpt:
       "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
     date: "2022-02-10",
+    content:
+      "# This is a first post\n\nAnd this is the content of the first post",
   },
   {
     id: "p3",
@@ -26,6 +29,8 @@ const DUMMY_POSTS = [
     excerpt:
       "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
     date: "2022-02-10",
+    content:
+      "# This is a first post\n\nAnd this is the content of the first post",
   },
   {
     id: "p4",
@@ -34,14 +39,16 @@ const DUMMY_POSTS = [
     excerpt:
       "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
     date: "2022-02-10",
+    content:
+      "# This is a first post\n\nAnd this is the content of the first post",
   },
 ];
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Hero />
-      <FeaturedPost posts={DUMMY_POSTS} />
-    </Layout>
+      <PostList posts={DUMMY_POSTS} page="featured_posts" />
+    </>
   );
 }

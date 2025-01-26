@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Post } from "../types";
 import Link from "next/link";
 import classes from "./PostItem.module.css";
+import { getPostImagePath } from "@/utils/PostHelper";
 
 export const PostItem = ({ post }: { post: Post }) => {
   return (
@@ -9,7 +10,7 @@ export const PostItem = ({ post }: { post: Post }) => {
       <Link href={`/posts/${post.id}`}>
         <div className={classes.image}>
           <Image
-            src={`/images/posts/${post.id}/${post.image}`}
+            src={getPostImagePath(post)}
             alt={post.title}
             width={300}
             height={200}
