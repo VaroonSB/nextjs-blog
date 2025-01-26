@@ -1,9 +1,5 @@
-import { Layout } from "@/components/Layout";
+import { Form } from "@/components/Contact/Form/Form";
 
 export default function ContactPage() {
-  return (
-    <Layout>
-      <div>Contact Page</div>
-    </Layout>
-  );
+  return <Form />;
 }
