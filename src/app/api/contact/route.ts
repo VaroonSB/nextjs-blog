@@ -5,7 +5,10 @@ export const POST = async (req: NextRequest) => {
   const { email, name, message } = await req.json();
 
   if (!email || !name || !message) {
-    return new NextResponse("Please fill in all fields", { status: 400 });
+    return NextResponse.json(
+      { message: "Please fill in all fields" },
+      { status: 400 }
+    );
   }
   if (
     typeof email !== "string" ||
@@ -15,10 +18,10 @@ export const POST = async (req: NextRequest) => {
     message.trim() === "" ||
     email.trim() === ""
   ) {
-    return new NextResponse("Invalid input", { status: 400 });
+    return NextResponse.json({ message: "Invalid input" }, { status: 400 });
   }
   if (!email.includes("@") || !email.includes(".")) {
-    return new NextResponse("Invalid email", { status: 400 });
+    return NextResponse.json({ message: "Invalid email" }, { status: 400 });
   }
 
   let client;
@@ -28,7 +31,10 @@ export const POST = async (req: NextRequest) => {
     );
   } catch (error) {
     console.log(error);
-    return new NextResponse("Could not connect to database", { status: 500 });
+    return NextResponse.json(
+      { message: "Could not connect to database" },
+      { status: 500 }
+    );
   }
 
   const db = client.db();
@@ -38,8 +44,14 @@ export const POST = async (req: NextRequest) => {
   } catch (error) {
     console.log(error);
     client.close();
-    return new NextResponse("Storing message failed", { status: 500 });
+    return NextResponse.json(
+      { message: "Storing message failed" },
+      { status: 500 }
+    );
   }
   client.close();
-  return new NextResponse("Successfully stored message!", { status: 201 });
+  return NextResponse.json(
+    { message: "Successfully stored message!" },
+    { status: 201 }
+  );
 };
