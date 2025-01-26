@@ -1,7 +1,7 @@
 import { Post } from "@/components/Posts/types";
 import Image from "next/image";
 import classes from "./PostHeader.module.css";
-import { getPostImagePath } from "@/utils/PostHelper";
+import { getPostImagePath } from "../../../utils/postHelper";
 
 export const PostHeader = ({ post }: { post: Post }) => {
   return (

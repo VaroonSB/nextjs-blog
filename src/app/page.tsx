@@ -1,54 +1,15 @@
 import { Hero } from "@/components/Hero";
 import { PostList } from "@/components/Posts/PostList";
+import { featuredPosts } from "../../utils/post-utils";
 
-const DUMMY_POSTS = [
-  {
-    id: "p1",
-    title: "Getting Started with Next.js",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
-    date: "2022-02-10",
-    content:
-      "# This is a first post\n\nAnd this is the content of the first post",
-  },
-  {
-    id: "p2",
-    title: "Getting Started with Next.js",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
-    date: "2022-02-10",
-    content:
-      "# This is a first post\n\nAnd this is the content of the first post",
-  },
-  {
-    id: "p3",
-    title: "Getting Started with Next.js",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
-    date: "2022-02-10",
-    content:
-      "# This is a first post\n\nAnd this is the content of the first post",
-  },
-  {
-    id: "p4",
-    title: "Getting Started with Next.js",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "Next.js is a React framework that provides a solution for server-side rendering, static site generation, and more.",
-    date: "2022-02-10",
-    content:
-      "# This is a first post\n\nAnd this is the content of the first post",
-  },
-];
+export const revalidate = 600;
 
 export default function Home() {
+  const posts = featuredPosts();
   return (
     <>
       <Hero />
-      <PostList posts={DUMMY_POSTS} page="featured_posts" />
+      <PostList posts={posts} page="featured_posts" />
     </>
   );
 }

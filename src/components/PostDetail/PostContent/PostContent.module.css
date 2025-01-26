@@ -11,12 +11,28 @@
 
 .content p {
   color: var(--color-grey-800);
+  margin: var(--size-4) 0;
+}
+
+.content ul {
+  list-style: disc;
+  margin: var(--size-4) 0;
+  padding-left: var(--size-8);
+}
+
+.content li {
+  color: var(--color-primary-300);
+  margin: var(--size-1) 0;
 }
 
 .content .image {
   margin: var(--size-4) auto;
   width: 100%;
   max-width: 600px;
+}
+
+.content a {
+  color: var(--color-primary-500);
 }
 
 @media (min-width: 768px) {
