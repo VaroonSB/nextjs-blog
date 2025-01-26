@@ -5,4 +5,5 @@ export interface Post {
   date: string;
   image: string;
   content: string;
+  isFeatured?: boolean;
 }

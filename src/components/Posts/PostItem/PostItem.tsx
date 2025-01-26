@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Post } from "../types";
 import Link from "next/link";
 import classes from "./PostItem.module.css";
-import { getPostImagePath } from "@/utils/PostHelper";
+import { getPostImagePath } from "../../../utils/postHelper";
 
 export const PostItem = ({ post }: { post: Post }) => {
   return (
