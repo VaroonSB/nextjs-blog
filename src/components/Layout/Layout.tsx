@@ -1,7 +1,7 @@
-import { JSX } from "react";
+import { ReactNode } from "react";
 import { MainNavigation } from "../MainNavigation";
 
-export const Layout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
+export const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <MainNavigation />
