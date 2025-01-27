@@ -1,5 +1,6 @@
 "use client";
 
+import { createPortal } from "react-dom";
 import classes from "./Notification.module.css";
 import { NotificationProps } from "./types";
 
@@ -16,10 +17,11 @@ export const Notification = ({ title, message, status }: NotificationProps) => {
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
 
-  return (
+  return createPortal(
     <div className={cssClasses}>
       <h2>{title}</h2>
       <p>{message}</p>
-    </div>
+    </div>,
+    document.getElementById("notifications")!
   );
 };
